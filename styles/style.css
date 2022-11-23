@@ -1,0 +1,207 @@
+:root {
+    --headingColor: #fff;
+    --textColor: #fff;
+    --backgroundColor: #23293b;
+    --cardColor: #28304e;
+    --lightColor: #637ca1;
+    --lightBorder: #b3b3b327;
+    --primaryColor: #3477f3;
+    --secondaryColor: #f07bff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background-image: url('../images/bg-mobile-dark.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 21rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 3rem .8rem;
+    background-color: var(--backgroundColor);
+    transition: .3s ease-in-out;
+}
+body.lightMode {
+    background-image: url('../images/bg-mobile-light.jpg');
+}
+svg {
+    height: 1rem;
+}
+
+path {
+    fill: var(--lightColor);
+}
+
+button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    display: flex;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p,
+input {
+    font-size: 1.rem;
+    color: var(--textColor);
+    letter-spacing: .1rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: .7rem;
+    color: var(--headingColor);
+}
+
+header button svg {
+    height: 2rem;
+}
+
+header button svg path {
+    fill: var(--textColor);
+}
+
+main {
+    width: 100%;
+    max-width: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+form, .mode {
+    padding: 1rem;
+    background-color: var(--cardColor);
+    border-radius: .4rem;
+}
+
+main form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+/* checkBox */
+.progress {
+    -webkit-appearance: none;
+    appearance: none;
+    padding: .4rem;
+    border: 1px solid var(--lightColor);
+    border-radius: 100%;
+    display: grid;
+    cursor: pointer;
+}
+.progress::before {
+    content: "";
+    padding: .4rem;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1rem 1rem var(--headingColor);
+}
+.progress:checked::before {
+    transform: scale(1);
+}
+.progress:checked {
+    background-image: linear-gradient(to bottom right, var(--primaryColor), var(--secondaryColor));
+}
+header input {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    color: var(--headingColor);
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+}
+header input::before {
+    content: '\f185';
+    font-family: 'Font Awesome 5 free';
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+header input.lightMode:before {
+    content: '\f186';
+}
+main form label {
+    width: 100%;
+}
+main form label #newTodo {
+    padding: .5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+main .allTodosContainer {
+    background-color: var(--cardColor);
+    border-radius: .4rem;
+    box-shadow: 0 1rem 1rem #010b3027;
+}
+
+main .allTodosContainer .allTodos .todo {
+    border-bottom: 2px solid var(--lightBorder);
+}
+main .allTodosContainer .allTodos .todo.invisible {
+    display: none;
+}
+
+main .allTodosContainer .allTodos .todo .item, main .allTodosContainer .itemsLeft {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .allTodosContainer .allTodos .todo .item .itemContent {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+main .allTodosContainer .allTodos .todo .item .itemContent .content.checked {
+    text-decoration: line-through;
+}
+
+
+main .allTodosContainer .itemsLeft p {
+    color: var(--lightColor);
+}
+
+main .allTodosContainer .itemsLeft button {
+    color: var(--lightColor);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+main .mode {
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: 0 1rem 1.5rem #010b3027;
+}
+
+main .mode button {
+    color: var(--lightColor);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.all.active, .onProgress.active, .completed.active {
+    color: var(--primaryColor);
+}
