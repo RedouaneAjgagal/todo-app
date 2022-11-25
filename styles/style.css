@@ -209,9 +209,6 @@ main .mode button {
 .all.active, .onProgress.active, .completed.active {
     color: var(--primaryColor);
 }
-.over {
-    background-color: #637ca1;
-}
 
 @media (min-width: 599px) {
     header {

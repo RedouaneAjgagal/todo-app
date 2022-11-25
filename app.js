@@ -25,7 +25,6 @@ const lightMode = (btn) => {
     btn.classList = 'lightMode';
 }
 toggleTheme();
-let draggedItem;
 let mode = 'all';
 let todos;
 localStorage.localTodos ? todos = JSON.parse(localStorage.localTodos) : todos = [];
