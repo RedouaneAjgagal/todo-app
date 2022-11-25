@@ -79,7 +79,7 @@ header button svg path {
 
 main {
     width: 100%;
-    max-width: 60rem;
+    max-width: 45rem;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -132,7 +132,7 @@ header input {
 }
 header input::before {
     content: '\f185';
-    font-family: 'Font Awesome 5 free';
+    font-family: 'Font Awesome 6 free';
     font-weight: 700;
     font-size: 1.5rem;
 }
@@ -154,6 +154,10 @@ main .allTodosContainer {
     background-color: var(--cardColor);
     border-radius: .4rem;
     box-shadow: 0 1rem 1rem #010b3027;
+    min-height: 29rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 main .allTodosContainer .allTodos .todo {
@@ -204,4 +208,19 @@ main .mode button {
 
 .all.active, .onProgress.active, .completed.active {
     color: var(--primaryColor);
+}
+.over {
+    background-color: #637ca1;
+}
+
+@media (min-width: 599px) {
+    header {
+        max-width: 45rem;
+    }
+    body {
+        background-image: url('../images/bg-desktop-dark.jpg');
+    }
+    body.lightMode {
+        background-image: url('../images/bg-desktop-light.jpg');
+    }
 }

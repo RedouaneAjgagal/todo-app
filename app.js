@@ -25,6 +25,7 @@ const lightMode = (btn) => {
     btn.classList = 'lightMode';
 }
 toggleTheme();
+let draggedItem;
 let mode = 'all';
 let todos;
 localStorage.localTodos ? todos = JSON.parse(localStorage.localTodos) : todos = [];
@@ -68,6 +69,11 @@ const displayTodos = () => {
         }
         // display all todos
         allTodos.appendChild(todoSection);
+    });
+    new Sortable(allTodos, {
+        animation: 350,
+        chosenClass: "sortable-chosen",
+        dragClass: "sortable-drag"
     });
     publishTodo();
 }
