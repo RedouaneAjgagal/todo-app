@@ -69,11 +69,6 @@ const displayTodos = () => {
         // display all todos
         allTodos.appendChild(todoSection);
     });
-    new Sortable(allTodos, {
-        animation: 350,
-        chosenClass: "sortable-chosen",
-        dragClass: "sortable-drag"
-    });
     publishTodo();
 }
 
@@ -181,4 +176,12 @@ const leftItems = () => {
     itemsLeft.innerHTML = `${todos.filter(e => e.active).length} items left`;
 }
 leftItems();
+
+const allTodos = document.querySelector('.allTodos');
+new Sortable(allTodos, {
+    animation: 350,
+    chosenClass: "sortable-chosen",
+    dragClass: "sortable-drag"
+});
+
 displayTodos();
